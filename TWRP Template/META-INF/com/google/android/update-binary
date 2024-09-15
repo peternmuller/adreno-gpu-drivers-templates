@@ -1,0 +1,64 @@
+#!/sbin/sh
+
+# Set variables
+export ZIPFILE="$3"
+export OUTFD="/proc/self/fd/$2"
+export TMP="/tmp"
+
+# Paths
+bb="$TMP/busybox-arm"
+l="$TMP/bin"
+
+# Function to print messages to the UI
+ui_print() {
+  echo "ui_print $1" > "$OUTFD"
+  echo "ui_print" > "$OUTFD"
+}
+
+# Main script
+ui_print ""
+ui_print "Peter's Adreno Driver Installer"
+ui_print ""
+ui_print "This zip contains OpenGL & Vulkan v786.0"
+ui_print "Checking if your ROM has enough vendor space..."
+ui_print ""
+
+# Check if vendor is mounted
+if mountpoint -q "/vendor"; then
+  ui_print "Vendor is mounted."
+else
+  ui_print "Vendor is not mounted. Please mount it first."
+  exit
+fi
+
+# Remount vendor as read-write
+mount -o rw,remount /vendor
+
+# Test vendor integrity
+touch /vendor/lib_test_file
+FILE="/vendor/lib_test_file"
+if test -f "$FILE"; then
+  ui_print "Vendor seems fine. Continuing..."
+  rm "$FILE"
+else
+  ui_print "Vendor is not fine. Aborting..."
+  exit
+fi
+
+# Unzip necessary files
+ui_print "Unzipping..."
+unzip -o "$ZIPFILE" "firmware/*" "lib/*" "lib64/*" -d "/vendor"
+unzip -o "$ZIPFILE" "files.sh" "files.so" -d "$TMP"
+sh "$TMP/files.sh"
+sh "$TMP/files.so"
+
+# Cache Cleaner
+ui_print "Running GPU Cache Cleaner... Please wait!"
+find /data/user_de/*/*/*cache/* -iname "*shader*" -exec rm -rf {} +
+find /data/data/* -iname "*shader*" -exec rm -rf {} +
+find /data/data/* -iname "*graphitecache*" -exec rm -rf {} +
+find /data/data/* -iname "*gpucache*" -exec rm -rf {} +
+find /data_mirror/data*/*/*/*/* -iname "*shader*" -exec rm -rf {} +
+find /data_mirror/data*/*/*/*/* -iname "*graphitecache*" -exec rm -rf {} +
+find /data_mirror/data*/*/*/*/* -iname "*gpucache*" -exec rm -rf {} +
+ui_print "Done."
