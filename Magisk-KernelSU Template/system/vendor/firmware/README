@@ -1,0 +1,25 @@
+⚠️ DELETE THIS FILE AFTER READING ⚠️
+
+You can place the `a650_sqe.fw` firmware file in the this directory. This firmware file can be extracted from the Meta Quest 2 firmware version v44.0.0.179.377.401350066.
+Note: newer firmware versions no longer work.
+
+You can download the working firmware from this link:
+https://files.cocaine.trade/firmware/meta/Quest%202/q2_44041400838600000.zip
+
+
+License
+
+    Copyright (C) 2024 Peter Noël Muller
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.

@@ -1,0 +1,22 @@
+# Zygote HideCrash Fix
+ro.zygote.disable_gl_preload=true
+
+# Vulkan HWUI Rendering - Uncomment the following setting only if you ROM supports it
+# ro.hwui.use_vulkan=true
+
+# Graphics
+debug.renderengine.backend=skiaglthreaded
+ro.config.avoid_gfx_accel=true
+debug.sf.treat_170m_as_sRGB=1
+ro.egl.blobcache.multifile=true
+ro.egl.blobcache.multifile_limit=33554432
+vendor.hwc.dpp.downscale=4
+vendor.display.vds_allow_hwc=1
+
+# SurfaceFlinger
+ro.surface_flinger.enable_frame_rate_override=false
+debug.sf.auto_latch_unsignaled=false
+debug.sf.disable_client_composition_cache=1
+ro.surface_flinger.enable_layer_caching=false
+debug.sf.enable_gl_backpressure=0
+debug.sf.enable_transaction_tracing=false

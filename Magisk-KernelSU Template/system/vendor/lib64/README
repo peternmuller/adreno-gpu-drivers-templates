@@ -1,0 +1,36 @@
+⚠️ DELETE THIS FILE AFTER READING ⚠️
+
+Place the necessary lib64 files in this directory. These usually include:
+
+- libCB.so
+- libOpenCL.so
+- libadreno_app_profiles.so
+- libadreno_utils.so
+- libgpudataproducer.so
+- libgsl.so
+- libkcl.so
+- libkernelmanager.so
+- libllvm-glnext.so
+- libllvm-qcom.so
+- libllvm-qgl.so
+
+💡 Platform-specific library schemes examples can be found at the following link:  
+https://github.com/AOSPA/android_device_qcom_common/tree/uvite/vendor
+
+
+License
+
+    Copyright (C) 2024 Peter Noël Muller
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
