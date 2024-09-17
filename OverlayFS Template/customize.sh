@@ -17,8 +17,8 @@
 
 # Info
 soc=$(getprop ro.soc.model)
-modver=$(grep_prop version "$MODPATH"/module.prop)
-moddesc=$(grep_prop description "$MODPATH"/module.prop)
+modver=$(grep_prop version "$MODPATH/module.prop")
+moddesc=$(grep_prop description "$MODPATH/module.prop")
 ui_print "- Version: $modver"
 ui_print "- $moddesc"
 ui_print ""
@@ -38,20 +38,18 @@ ui_print ""
 ui_print "- Installing drivers for $soc..."
 
 
-# Set permissions and handle firmware file based on SoC
+# Handle firmware file and set permissions based on SoC
 if [[ "$soc" == "SM8250" || "$soc" == "SM8250-AB" || "$soc" == "SM8250-AC" ]]; then
-  chmod 644 /system/vendor/firmware/a650_sqe.fw
+  set_perm "$MODPATH/system/vendor/firmware/a650_sqe.fw" 0 0 0644 u:object_r:vendor_firmware_file:s0
   ui_print "- A650 SQE firmware successfully installed."
 else
-  rm -f "$MODPATH/system/vendor/firmware/a650_sqe.fw"
+  rm -rf "$MODPATH/system/vendor/firmware"
   ui_print "- A650 SQE firmware (kona-specific) is not installed because your SoC is not SM8250, SM8250-AB, or SM8250-AC."
 fi
 
-
 # Add patch permissions for paths
-if set_perm_recursive "$MODPATH" 0 0 0755 0644 \
-   && set_perm_recursive "$MODPATH"/system/vendor/ 0 0 0755 0644 u:object_r:same_process_hal_file:s0 \
-   && set_perm_recursive "$MODPATH"/system/lib*/ 0 0 0644 u:object_r:system_lib_file:s0; then
+if set_perm_recursive "$MODPATH/system/vendor/lib*/" 0 0 0755 0644 u:object_r:same_process_hal_file:s0 \
+   && set_perm_recursive "$MODPATH/system/lib*/" 0 0 0644 u:object_r:system_lib_file:s0; then
   ui_print "- Drivers successfully installed!"
 else
   ui_print "- Error: Failed to install drivers."
