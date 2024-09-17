@@ -1,5 +1,3 @@
-⚠️ DELETE THIS FILE AFTER READING ⚠️
-
 You can place the `a650_sqe.fw` firmware file in the `/vendor/firmware/` directory. This firmware file can be extracted from the Meta Quest 2 firmware version v44.0.0.179.377.401350066.
 Note: newer firmware versions no longer work.
 

@@ -1,5 +1,3 @@
-⚠️ DELETE THIS FILE AFTER READING ⚠️
-
 Place the necessary 64-bit EGL files in this directory. These usually include:
 
 - eglSubDriverAndroid.so
