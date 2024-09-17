@@ -36,7 +36,7 @@ ui_print() {
 ui_print ""
 ui_print "Peter's Adreno Driver Installer"
 ui_print ""
-ui_print "This zip contains OpenGL & Vulkan v " # Specify driver version here
+ui_print "This zip contains OpenGL & Vulkan v " # Specify the driver version here
 ui_print "Checking if your ROM has enough vendor space..."
 ui_print ""
 
@@ -65,9 +65,8 @@ fi
 # Unzip necessary files
 ui_print "Unzipping..."
 unzip -o "$ZIPFILE" "firmware/*" "lib/*" "lib64/*" -d "/vendor"
-unzip -o "$ZIPFILE" "files.sh" "files.so" -d "$TMP"
+unzip -o "$ZIPFILE" "files.sh" -d "$TMP"
 sh "$TMP/files.sh"
-sh "$TMP/files.so"
 
 # Cache Cleaner
 ui_print "Running GPU Cache Cleaner... Please wait!"

@@ -17,9 +17,7 @@
 
 chcon u:object_r:vendor_firmware_file:s0 /vendor/firmware/a650_sqe.fw
 chmod 644 /vendor/firmware/a650_sqe.fw
-chcon u:object_r:same_process_hal_file:s0 /vendor/lib*/*.so
-chmod 644 /vendor/lib*/*.so
-chcon u:object_r:same_process_hal_file:s0 /vendor/lib*/egl/*.so
-chmod 644 /vendor/lib*/egl/*.so
-chcon u:object_r:same_process_hal_file:s0 /vendor/lib*/hw/*.so
-chmod 644 /vendor/lib*/hw/*.so
+chcon u:object_r:same_process_hal_file:s0 /vendor/lib*/**/*.so
+chmod 644 /vendor/lib*/**/*.so
+chcon u:object_r:system_lib_file:s0 /system/lib*/*.so
+chmod 644 /system/lib*/*.so
