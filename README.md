@@ -14,14 +14,14 @@ There are three templates available to create custom driver modules:
 3. [TWRP Template](https://github.com/peternmuller/adreno-gpu-drivers-templates/blob/main/TWRP%20Template): For creating driver modules compatible with [TWRP](https://github.com/Teamwin/android_bootable_recovery) or other custom recoveries such as [OrangeFox](https://gitlab.com/OrangeFox).
 
 > [!IMPORTANT]
-> Each directory of each template includes its own README file, please read them carefully and delete them when publishing drivers.
+> Each directory of each template includes its own README file, please read them carefully.
 
 ## About GPU Cache Cleaners
-There are two types of GPU cache cleaners included in the release:
+There are two types of GPU cache cleaners included in the [releases](https://github.com/peternmuller/adreno-gpu-drivers-templates):
 1. Shell script: This script can be run via terminal applications (like [Termux](https://github.com/termux/termux-app)). Use the command `su` followed by `sh path/to/script/GPU_Cache_Cleaner.sh`.
 2. Recovery-flashable script: This can be flashed through custom recoveries.
 
-They both of them perform the same task of clearing shader caches from the following directories:
+Both of them perform the same task of clearing shader caches from the following directories:
 - `/data/data`
 - `/data/user_de/*/*/*cache`
 - `/data_mirror/data*/*/*/*`
