@@ -6,7 +6,7 @@
 
 This project provides templates for creating custom driver modules for Qualcomm Adreno GPUs. These templates are designed to simplify the process of creating and installing custom drivers on Android devices.
 
-## About templates
+## About Templates
 There are three templates available to create custom driver modules:
 
 1. [Magisk/KernelSU Template](https://github.com/peternmuller/adreno-gpu-drivers-templates/blob/main/Magisk-KernelSU%20Template): For creating driver modules compatible with [Magisk](https://github.com/topjohnwu/Magisk) and [KernelSU](https://github.com/tiann/KernelSU).
@@ -15,6 +15,16 @@ There are three templates available to create custom driver modules:
 
 > [!IMPORTANT]
 > Each directory of each template includes its own README file, please read them carefully and delete them when publishing drivers.
+
+## About GPU Cache Cleaners
+There are two types of GPU cache cleaners included in the release:
+1. Shell script: This script can be run via terminal applications (like [Termux](https://github.com/termux/termux-app)). Use the command `su` followed by `sh path/to/script/GPU_Cache_Cleaner.sh`.
+2. Recovery-flashable script: This can be flashed through custom recoveries.
+
+They both of them perform the same task of clearing shader caches from the following directories:
+- `/data/data`
+- `/data/user_de/*/*/*cache`
+- `/data_mirror/data*/*/*/*`
 
 ## Support
 - Join my [Telegram chat](https://t.me/PeterSpaceChat) for support with GPU drivers.
