@@ -17,7 +17,7 @@ There are three templates available to create custom driver modules:
 > Each directory of each template includes its own README file, please read them carefully.
 
 ## About GPU Cache Cleaners
-There are two types of GPU cache cleaners included in the [releases](https://github.com/peternmuller/adreno-gpu-drivers-templates):
+There are two types of GPU cache cleaners included in the [releases](https://github.com/peternmuller/adreno-gpu-drivers-templates/releases):
 1. Shell script: This script can be run via terminal applications (like [Termux](https://github.com/termux/termux-app)). Use the command `su` followed by `sh path/to/script/GPU_Cache_Cleaner.sh`.
 2. Recovery-flashable script: This can be flashed through custom recoveries.
 
