@@ -4,9 +4,11 @@ ro.zygote.disable_gl_preload=true
 # Vulkan HWUI Rendering - Uncomment the following setting only if you ROM supports it
 # ro.hwui.use_vulkan=true
 
+# Graphics Acceleration - Comment the following setting if you want to get blur back on MIUI/HyperOS
+ro.config.avoid_gfx_accel=true
+
 # Graphics
 debug.renderengine.backend=skiaglthreaded
-ro.config.avoid_gfx_accel=true
 debug.sf.treat_170m_as_sRGB=1
 ro.egl.blobcache.multifile=true
 ro.egl.blobcache.multifile_limit=33554432
