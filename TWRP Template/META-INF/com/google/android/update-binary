@@ -52,8 +52,8 @@ fi
 mount -o rw,remount /vendor
 
 # Test vendor integrity
-touch /vendor/lib_test_file
-FILE="/vendor/lib_test_file"
+touch /vendor/test_file
+FILE="/vendor/test_file"
 if test -f "$FILE"; then
   ui_print "Vendor seems fine. Continuing..."
   rm "$FILE"
